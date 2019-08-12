@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/uploader.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+        <div class="block" id="welcome">
+            <div class="inline" >
+                <h2> Welcome to the receipt labeler!</h2>
+                <text style="font-size:17px;">
+                    This labeler can label receipt to the following labels: <br>
+                    -- Receipt --<br>
+                    -- Logo --<br>
+                    -- Shop detail --<br>
+                    -- Parches summery --<br>
+                    -- Additional details --
+                </text>
+            </div>
+        </div>
+        <div class="block" id="form">
+            <form class="inline" id="file-upload"  method="post" action="/label" enctype="multipart/form-data">
+                <div class="image-upload-wrap block" >
+                    <input class="file-upload-input inline" title="Drag and drop a receipt image"
+                           onchange="readURL(this)" onclick="this.value=null;"
+                           type='file' name="file" accept="image/*"/>
+                    <label for="files" class="drag-text inline"  onclick="$('.file-upload-input').trigger('click')">
+                        Drag or select a receipt image
+                    </label>
+                </div>
+
+                <div class="file-upload-content inline">
+                    <img class="file-upload-image" src="#" alt="your image"/>
+                    <div class="image-title-wrap">
+                        <button type="button" onclick="removeUpload()" class="remove-image">Cancel
+                        </button>
+                        <input type="submit" value="Upload & Label" class="approve-btn">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/labeler.css') }}"/>
+    <script src="{{ url_for('static', filename='js/labeler.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+
+
+    <div class="fixed_size images_and_preview block">
+        <div class="preview inline">
+            <div class="label_name"></div>
+            <img class="preview_img">
+        </div>
+
+        <div class="labeled_images inline">
+            {% for i in range(0, len) %}
+                <div class="img_container">
+                    <img class=" labeled_image" src="" id="{{ IMG_IDS[i] }}" title="{{ IMG_LABELS[i] }}"
+                         alt="{{ IMG_LABELS[i] }}" onmouseover="view_image(this)"
+                    >
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="labels_names labeled_images inline">
+            {% for i in range(0, len) %}
+                <div class="{{ IMG_IDS[i] }}_labels_container special-font labels_container">
+                   <- {{ IMG_LABELS[i] }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="fixed_size load_and_alert block">
+        <div class="dialog inline" id="dialog"></div>
+        <div class="loader inline"></div>
+        <div class="blank inline"></div>
+    </div>
+    <div class="images_and_preview block">
+        <button class="approve-btn inline" onclick="lable_another()">Lable another image!</button>
+    </div>
+
+
+{% endblock %}

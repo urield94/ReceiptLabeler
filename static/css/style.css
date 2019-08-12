@@ -1,0 +1,81 @@
+/*---------------------LAYOUT---------------*/
+#content {
+    margin: 0 auto;
+    width: 90%;
+    background-image: linear-gradient(to right,
+    #284449,
+    #3f5f64, #52797f, #609096, #86aaad, #9faeb1,
+    #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4, #B4B4B4,
+    #9faeb1, #86aaad, #609096, #52797f, #3f5f64,
+    #284449);
+    padding-bottom: 5px;
+}
+
+#container {
+    margin-bottom: 0;
+}
+
+#logo_href {
+    padding: 0;
+}
+
+#rl_logo {
+    height: 80px;
+    width: 440px;
+}
+
+#footer {
+    margin: 0 auto;
+    width: 90%;
+    background-color: #284449;
+    color: #6fb6be;
+}
+
+/*--------------------/LAYOUT/--------------*/
+
+/*-----------------APPROVE BUTTONS-----------*/
+.approve-btn:hover {
+    background: #518980;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.approve-btn:active {
+    border: 0;
+    transition: all .2s ease;
+}
+
+.approve-btn {
+    width: 200px;
+    margin: 0;
+    color: #fff;
+    background: #407168;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #213d43;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+}
+
+/*-----------------/APPROVE BUTTONS/-----------*/
+
+/*------------------BLOCK INLINE---------------*/
+.block {
+    display: block;
+    width: 100%;
+}
+
+.inline {
+    display: inline-block;
+    max-width: 430px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    height: 100%;
+}
+/*-----------------/BLOCK INLINE/--------------*/
+

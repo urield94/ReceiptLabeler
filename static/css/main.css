@@ -1,0 +1,110 @@
+/*---------------------FORM----------------------*/
+    #form{
+        width: 450px;
+    }
+
+    #form .inline{
+        padding: 0;
+        width: 100%;
+    }
+
+    #file-upload {
+        width: 90%;
+            margin-bottom: 15px;
+        margin-top: 10px;
+    }
+
+        /*-------------UPLOAD--------------*/
+            .image-upload-wrap {
+
+                height: 230px;
+                padding-bottom: 20px;
+                border: 4px dashed #1d0006;
+                cursor: pointer;
+            }
+
+            .image-dropping,
+            .image-upload-wrap:hover {
+                background-color: #929292;
+                border: 4px dashed #373437;
+                color: #8e9499;
+                cursor: pointer;
+            }
+
+            .file-upload-input {
+                /*position: absolute;*/
+                height:65px;
+                outline: none;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .drag-text {
+
+                text-transform: uppercase;
+                color: #39373b;
+                cursor: pointer;
+                font-size: 25px;
+            }
+        /*-------------/UPLOAD/--------------*/
+
+        /*--------------PREVIEW--------------*/
+            .file-upload-content {
+                display: none;
+                text-align: center;
+            }
+
+            .file-upload-image {
+                max-height: 200px;
+                max-width: 200px;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .image-title-wrap {
+                color: #3b3b3b;
+            }
+
+            .remove-image {
+                width: 200px;
+                margin: 0;
+                color: #fff;
+                background: #cd4535;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                border-bottom: 4px solid #b02818;
+                transition: all .2s ease;
+                outline: none;
+                text-transform: uppercase;
+                font-weight: 700;
+                display: inline-block;
+            }
+
+            .remove-image:hover {
+                background: #c13b2a;
+                color: #ffffff;
+                transition: all .2s ease;
+                cursor: pointer;
+            }
+
+            .remove-image:active {
+                border: 0;
+                transition: all .2s ease;
+            }
+        /*-------------/PREVIEW/-------------*/
+
+
+/*---------------------/FORM/----------------------*/
+
+
+
+
+
+
+
+
+
+
+
+

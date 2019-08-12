@@ -1,0 +1,24 @@
+item {
+  id: 1
+  name: 'Logo'
+}
+
+item {
+  id: 2
+  name: 'Shop details'
+}
+
+item {
+  id: 3
+  name: 'Purchase summary'
+}
+
+item {
+  id: 4
+  name: 'Additional details'
+}
+
+item {
+  id: 5
+  name: 'Receipt'
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="eng" style="height: 100%; text-align: center;">
+<head>
+    {% block head %}
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+              integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+              crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+              integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+              crossorigin="anonymous">
+
+
+        <title>Reciept labeler</title>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel=" stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock %}
+</head>
+<body style="background-color: #383838;height: 100%;">
+
+<div class="block" id="content">
+    <div class="inline" id="container">
+        {% block content %}
+
+            <div class="block">
+                <a href="/" class="inline" id="logo_href">
+                    <img alt="receipt_labeler_logo" id="rl_logo"
+                         src="{{ url_for('static', filename='imgs/web_logo.png') }}">
+                </a>
+            </div>
+        {% endblock %}
+    </div>
+</div>
+<div class="block" id="footer">
+    <footer class="inline">
+        <a href="https://github.com/urield94/ReceiptLabeler">
+        <img src="{{ url_for('static', filename='imgs/icons-github.png') }}">
+        Uriel Dardik - 2019
+            </a>
+    </footer>
+</div>
+</body>
+</html>
