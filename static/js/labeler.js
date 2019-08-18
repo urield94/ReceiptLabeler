@@ -5,22 +5,32 @@ $(document).ready(function () {
     let url = window.location.href;
     img_name = url.split('/')[url.split('/').length - 1];
     $.get("/label_img/" + img_name).done(function (data) {
-        let labels_path = JSON.parse(data);
-        let all_labels_objects = {
-            "Receipt": [$("#receipt"), "get_receipt", "receipt"],
-            "Logo": [$("#logo"), "get_logo", "logo"],
-            "Shop details": [$("#sd"), "get_sd", "sd"],
-            "Purchase summary": [$("#ps"), "get_ps", "ps"],
-            "Additional details": [$("#ad"), "get_ad", "ad"]
-        };
-        show(all_labels_objects, labels_path, url)
-    });
+            if (data !== "Failed") {
+                let labels_path = JSON.parse(data);
+                let all_labels_objects = {
+                    "Receipt": [$("#receipt"), "get_receipt", "receipt"],
+                    "Logo": [$("#logo"), "get_logo", "logo"],
+                    "Shop details": [$("#sd"), "get_sd", "sd"],
+                    "Purchase summary": [$("#ps"), "get_ps", "ps"],
+                    "Additional details": [$("#ad"), "get_ad", "ad"]
+                };
+                show(all_labels_objects, labels_path, url)
+            } else {
+                return_to_index()
+            }
+        }
+    );
+
 });
 
 window.addEventListener('beforeunload', function () {
-    return lable_another();
+    return_to_index();
 });
 
+function return_to_index() {
+    window.location.replace((window.location.href).replace("labeler/" + img_name, ''));
+
+}
 
 function chagne_element_attributes(img, attributes) {
     let url = window.location.href;
@@ -75,7 +85,7 @@ function show(all_labels_objects, labels_path, url) {
                     $(".blank").show();
                 },
                 function () {
-                    return lable_another()
+                    return_to_index()
                 });
             return
         }
@@ -126,17 +136,6 @@ function show(all_labels_objects, labels_path, url) {
         $(".images_and_preview").show();
         $(".load_and_alert").hide();
     }
-}
-
-
-function lable_another() {
-    $.get('/delete_and_return/' + img_name).done(function (data) {
-        if (data === "Success")
-            window.location.replace((window.location.href).replace("labeler/" + img_name, ''));
-        else {
-            window.location.replace((window.location.href).replace("labeler/" + img_name, ''));
-        }
-    });
 }
 
 

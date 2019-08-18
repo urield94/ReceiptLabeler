@@ -1,4 +1,7 @@
 import json
+import sched
+import threading
+import time
 import uuid
 import os
 import logging
@@ -53,9 +56,10 @@ def labeler(filename):
     return render_template("labeler.html", len=len(IMG_LABELS), IMG_LABELS=IMG_LABELS, IMG_IDS=IMG_IDS)
 
 
-@application.route("/delete_and_return/<path:filename>")
-def delete_and_return(filename):
+def delete(filename):
     try:
+        print(f"Deleting {filename}")
+
         labels = ["Logo_", "Shop details_", "Purchase summary_", "Additional details_", "Receipt_", ""]
         for label in labels:
             img_path = f'{application_PATH}/object_detection/tmp/{label}{filename}.jpg'
@@ -65,10 +69,20 @@ def delete_and_return(filename):
             except Exception as e:
                 logging.error(f"Error while deleting {img_path} - {e}")
                 continue
-        return "Success"
     except Exception as e:
         logging.error(e)
-        return index()
+        return redirect("/index")
+
+def delete_sched(filename):
+    s = sched.scheduler(time.time, time.sleep)
+    s.enter(30, 1, delete, (filename,))
+    s.run()
+
+@application.route("/delete_and_return/<path:filename>")
+def delete_and_return(filename):
+    t = threading.Thread(target=delete, args=(filename,))
+    t.start()
+    return redirect("/index")
 
 
 @application.route("/label_img/<path:filename>")
@@ -76,14 +90,17 @@ def label_img(filename):
     try:
         if os.path.isfile(f'{application_PATH}/object_detection/tmp/{filename}.jpg'):
             receipt_labeler = ReceiptLabeler()
+            print(f"Start labeling {filename}")
             res = receipt_labeler.lable_image(f'{filename}.jpg')
+            print(f"Finished!")
+            t = threading.Thread(target=delete_sched, args=(filename,))
+            t.start()
             return json.dumps(res)
         else:
-            return index()
+            return "Failed"
     except Exception as e:
         logging.error(e)
-        return index()
-
+        return "Failed"
 
 @application.route("/get_logo/<path:filename>")
 def get_logo(filename):

@@ -3,6 +3,10 @@ Label a receipt image into the following labels: Receipt, Logo, Shop detail, Par
 
 The model was trained over manualy labeled receipt images, and than was integrated to a freindly user interface's application using python flask.
 
+# Before cloning...
+- The application was developed and tested on Ubuntu 18.04.2 LTS, they may be some modifications in the code for other platforms.
+- The application was developed using Python 3.6
+
 # Use
 The application can be found here - http://tiny.cc/receipt-labeler
 
@@ -16,7 +20,7 @@ Install the requirements using -
     
 And run the flask server using - 
 
-    python flask run
+    python -m flask run
     
 The app will be up and ruuning and live at http://127.0.0.1:5000/
 
