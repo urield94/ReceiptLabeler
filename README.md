@@ -8,6 +8,8 @@ The model was trained over manualy labeled receipt images, and than was integrat
 - The application was developed using Python 3.6
 
 # Use
+You can try the application with the test_receipt_img.jpg image in the reposetory or you can scan your own receipt image!
+
 The application can be found here - http://tiny.cc/receipt-labeler
 
 For development use, clone the reposetory using -
