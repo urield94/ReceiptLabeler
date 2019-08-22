@@ -1,0 +1,50 @@
+<annotation>
+	<folder>imgs</folder>
+	<filename>1425-3716692151_c5a162551d_b.jpg</filename>
+	<path>Path_to_change/imgs/1425-3716692151_c5a162551d_b.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>768</width>
+		<height>1024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Shop details</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>74</xmin>
+			<ymin>177</ymin>
+			<xmax>571</xmax>
+			<ymax>348</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Purchase summary</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>46</xmin>
+			<ymin>323</ymin>
+			<xmax>631</xmax>
+			<ymax>916</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Receipt</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>30</xmin>
+			<ymin>88</ymin>
+			<xmax>679</xmax>
+			<ymax>971</ymax>
+		</bndbox>
+	</object>
+</annotation>
