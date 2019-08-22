@@ -1,7 +1,7 @@
 # Receipt Labeler
-Label a receipt image into the following labels: Receipt, Logo, Shop detail, Parches summery , and Additional details, using trained TensorFlow object detection model.
+Label a receipt image into the following labels: Receipt, Logo, Shop detail, Parches summery , and Additional details, using trained [TensorFlow object detection model](https://github.com/tensorflow/models) and Faster-RCNN-Inception-V2 model from the [Model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md).
 
-The model was trained over manualy labeled receipt images, and than was integrated to a freindly user interface's application using python flask.
+The model has been trained over manualy labeled receipt images, that can be found [here](https://github.com/urield94/ReceiptLabeler/tree/master/receipt_dataset), and than was integrated to a freindly user interface's application using python flask.
 
 # Before cloning...
 - The application was developed and tested on Ubuntu 18.04.2 LTS, they may be some modifications in the code for other platforms.
